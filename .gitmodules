@@ -1,0 +1,3 @@
+[submodule "dtnews"]
+	path = dtnews
+	url = https://github.com/deeptechid/dtnews
