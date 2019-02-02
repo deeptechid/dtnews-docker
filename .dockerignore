@@ -1,0 +1,10 @@
+.git
+dtnews/.git
+dtnews/.github
+dtnews/.travis
+dtnews/.gitignore
+dtnews/log/*
+dtnews/tmp/*
+Dockerfile
+docker-compose.yml
+
