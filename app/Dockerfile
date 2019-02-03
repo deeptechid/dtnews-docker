@@ -18,7 +18,7 @@ LABEL maintainer="Giovanni Sakti, giosakti@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="https://github.com/deeptechid/dtnews-docker" \
-      org.label-schema.schema-version="0.1.0"
+      org.label-schema.schema-version="0.1.1"
 
 # Create dtnews user and group.
 RUN addgroup -S dtnews && adduser -S -h /dtnews -s /bin/sh -G dtnews dtnews

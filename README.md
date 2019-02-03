@@ -58,7 +58,7 @@ docker run \
   -e MARIADB_USER=dtnews \
   -e MARIADB_PASSWORD=my-secret-pw \
   -d \
-  deeptechid/dtnews:0.1.0
+  deeptechid/dtnews:0.1.1
 ```
 
 ### Using docker-compose
