@@ -4,8 +4,6 @@ Docker configuration for dtnews
 
 ## Usage
 
-### Using dtnews docker build.
-
 This will serve up dtnews at http://localhost:3000/
 
 1. Run database
@@ -60,10 +58,6 @@ docker run \
   -d \
   deeptechid/dtnews:0.1.2
 ```
-
-### Using docker-compose
-
-docker-compose -f docker-compose.yml up -d
 
 ## Environment Variables
 
