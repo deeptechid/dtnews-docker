@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.1.2
+## 0.1.3
 - Install ncurses on the image so that rails console can work
 
 ## 0.1.1

@@ -56,7 +56,7 @@ docker run \
   -e MARIADB_USER=dtnews \
   -e MARIADB_PASSWORD=my-secret-pw \
   -d \
-  deeptechid/dtnews:0.1.2
+  deeptechid/dtnews:0.1.3
 ```
 
 ## Environment Variables
