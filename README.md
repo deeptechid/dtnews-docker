@@ -18,7 +18,7 @@ docker run --name dtnews-db \
   -p 3306:3306 \
   -e MYSQL_ROOT_PASSWORD=my-secret-pw \
   -e MYSQL_USER=dtnews \
-  -e MYSQL_PASSWORD=dtnews \
+  -e MYSQL_PASSWORD=my-secret-pw \
   -e MYSQL_DATABASE=dtnews \
   -d \
   mariadb
@@ -58,7 +58,7 @@ docker run \
   -e MARIADB_USER=dtnews \
   -e MARIADB_PASSWORD=my-secret-pw \
   -d \
-  deeptechid/dtnews:0.1.1
+  deeptechid/dtnews:0.1.2
 ```
 
 ### Using docker-compose

@@ -6,6 +6,7 @@ FROM ruby:2.5.3-alpine
 # build tools and dev packages.
 ARG developer_build=false
 ARG RUBY_VERSION=2.5.3
+ARG RUBY_MAJOR_VERSION=2.5.0
 # Args for labels.
 ARG VCS_REF
 ARG BUILD_DATE
@@ -18,7 +19,7 @@ LABEL maintainer="Giovanni Sakti, giosakti@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="https://github.com/deeptechid/dtnews-docker" \
-      org.label-schema.schema-version="0.1.1"
+      org.label-schema.schema-version="0.1.2"
 
 # Create dtnews user and group.
 RUN addgroup -S dtnews && adduser -S -h /dtnews -s /bin/sh -G dtnews dtnews
@@ -29,9 +30,9 @@ COPY ./dtnews/Gemfile ./dtnews/Gemfile.lock /dtnews/
 # Install needed runtime & development dependencies. If this is a developer_build we don't remove
 # the build-deps after doing a bundle install.
 RUN chown -R dtnews:dtnews /dtnews \
-    && apk --no-cache --update --virtual deps add mariadb-connector-c-dev mariadb-connector-c sqlite-libs tzdata nodejs \
+    && apk --no-cache --update --virtual deps add mariadb-connector-c-dev mariadb-connector-c sqlite-libs tzdata nodejs ncurses \
     && apk --no-cache --virtual build-deps add build-base gcc mariadb-dev linux-headers sqlite-dev git bash curl gnupg \
-    && export PATH=/dtnews/.gem/ruby/$RUBY_VERSION/bin:$PATH \
+    && export PATH=/dtnews/.gem/ruby/$RUBY_MAJOR_VERSION/bin:$PATH \
     && export GEM_HOME="/dtnews/.gem" \
     && export GEM_PATH="/dtnews/.gem" \
     && export BUNDLE_PATH="/dtnews/.bundle" \
@@ -81,7 +82,7 @@ ENV MARIADB_HOST="mariadb" \
     SMTP_USERNAME="dtnews" \
     SMTP_PASSWORD="dtnews" \
     RAILS_LOG_TO_STDOUT="1" \
-    PATH="/dtnews/.gem/ruby/$RUBY_VERSION/bin:/dtnews/.yarn/bin:$PATH"
+    PATH="/dtnews/.gem/ruby/$RUBY_MAJOR_VERSION/bin:/dtnews/.yarn/bin:$PATH"
 
 # Expose HTTP port.
 EXPOSE 3000
