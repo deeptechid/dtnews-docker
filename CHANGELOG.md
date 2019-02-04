@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.1.4
+- Allow connection pool to be specified
+
 ## 0.1.3
 - Install ncurses on the image so that rails console can work
 

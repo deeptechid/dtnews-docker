@@ -19,7 +19,7 @@ LABEL maintainer="Giovanni Sakti, giosakti@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="https://github.com/deeptechid/dtnews-docker" \
-      org.label-schema.schema-version="0.1.3"
+      org.label-schema.schema-version="0.1.4"
 
 # Create dtnews user and group.
 RUN addgroup -S dtnews && adduser -S -h /dtnews -s /bin/sh -G dtnews dtnews
@@ -65,6 +65,7 @@ WORKDIR /dtnews/
 # Set environment variables.
 ENV MARIADB_HOST="mariadb" \
     MARIADB_PORT="3306" \
+    MARIADB_POOL="10" \
     MARIADB_USER="user" \
     MARIADB_PASSWORD="password" \
     DTNEWS_HOSTNAME="localhost" \

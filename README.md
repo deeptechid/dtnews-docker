@@ -53,10 +53,11 @@ docker run --name dtnews-db-slave \
 docker run \
   -p 3000:3000 \
   -e MARIADB_HOST=dtnews-db-master \
+  -e MARIADB_POOL=10 \
   -e MARIADB_USER=dtnews \
   -e MARIADB_PASSWORD=my-secret-pw \
   -d \
-  deeptechid/dtnews:0.1.3
+  deeptechid/dtnews:0.1.4
 ```
 
 ## Environment Variables
@@ -65,6 +66,7 @@ You may also set these environment variables
 
 ```
 MARIADB_HOST
+MARIADB_POOL
 MARIADB_USER
 MARIADB_PASSWORD
 DTNEWS_HOSTNAME
