@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.1.5
+- Update Deeptech logo in front page
+
 ## 0.1.4
 - Allow connection pool to be specified
 
